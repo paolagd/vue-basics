@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Events</title>
+  </head>
+  <body>
+    <div id="formEvent">
+      <form>
+        <input v-model="query" type="search" placeholder="search..." />
+        <button type="button" v-on:click="executeSearch">Search</button>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+
+    <script type="text/javascript">
+      var formEvent = new Vue({
+        el: "#formEvent",
+        data: { query: "" },
+        methods: {
+          executeSearch: function () {
+            alert(this.query);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
