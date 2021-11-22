@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>looping</title>
+  </head>
+  <body>
+    <div id="looploop">
+      <ul>
+        <li v-for="user in currentUser">
+          <a href="#" v-on:click="search">{{user}}</a>
+        </li>
+      </ul>
+      <ul>
+        <li v-for="(value, name, index) in currentUser">
+          {{index}}: {{name}} -- {{value}}
+        </li>
+      </ul>
+      <br />
+
+      <ul>
+        <li v-for="(page, i) in pages">{{i}}-{{page.url}}</li>
+      </ul>
+      <br />
+      <ul>
+        <li v-for="number in numbers">{{number}}</li>
+      </ul>
+
+      <!-- using for and if together : for directive has higher precedence -->
+      <div>
+        <div>
+          <label>Max calories:</label>
+          <input type="range" v-model="maxCal" min="0" max="5000"/>
+          <small>{{maxCal}}</small>
+        </div>
+        <ul>
+          <li><strong>Meals:</strong></li>
+          <li v-for="meal in meals" v-if="meal.calories < maxCal">{{meal.name}} : {{meal.calories}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+
+    <script type="text/javascript">
+      var formEvent = new Vue({
+        el: "#looploop",
+        data: {
+          currentUser: {
+            firstName: "Paola",
+            lastName: "Garcia",
+          },
+          pages: [
+            { number: 1, url: "?page=1" },
+            { number: 2, url: "?page=2" },
+            { number: 3, url: "?page=3" },
+          ],
+          numbers: [1, 2, 3],
+          meals: [
+            { name: "burger", calories: 1000 },
+            { name: "arepa", calories: 200 },
+            { name: "kebabs", calories: 400 },
+            { name: "pizza", calories: 2000 },
+          ],
+          maxCal: 5000,
+        },
+        methods: {
+          search: () => {
+            alert("hi");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
