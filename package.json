@@ -1,0 +1,19 @@
+{
+  "name": "vue-beersearch",
+  "version": "1.0.0",
+  "description": "Small app to search for fictional beers using Vue and Axios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paolagd/vue-beersearch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paolagd/vue-beersearch/issues"
+  },
+  "homepage": "https://github.com/paolagd/vue-beersearch#readme"
+}

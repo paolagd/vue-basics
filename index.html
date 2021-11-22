@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>My first vue app!</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/axios/dist/axios.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="growler">
+      <input v-model="query" placeholder="Search..." />
+
+      <br />
+
+      <div>Searching for: {{ query }}</div>
+    </div>
+
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+
+    <script type="text/javascript">
+      var growler = new Vue({
+        el: "#growler",
+        data: { appName: "Growler", query: "" },
+      });
+    </script>
+  </body>
+</html>
